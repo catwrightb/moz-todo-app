@@ -1,5 +1,7 @@
 
 import ToDo from "./components/todo";
+import Form from "./components/form";
+import Button from "./components/filterButton";
 
 function App(props) {
 
@@ -14,42 +16,20 @@ function App(props) {
     key={task.id}
     />);
 
+    const buttonList = props.btn.map(btn => <Button
+      id={btn.id} 
+      name={btn.name}
+      key={btn.id}
+      />);
+
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <form>
-        <h2 className="label-wrapper">
-          <label htmlFor="new-todo-input" className="label__lg">
-            What needs to be done?
-          </label>
-        </h2>
-        <input
-          type="text"
-          id="new-todo-input"
-          className="input input__lg"
-          name="text"
-          autoComplete="off"
-        />
-        <button type="submit" className="btn btn__primary btn__lg">
-          Add
-        </button>
-      </form>
+      
+      <Form />
       <div className="filters btn-group stack-exception">
-        <button type="button" className="btn toggle-btn" aria-pressed="true">
-          <span className="visually-hidden">Show </span>
-          <span>all</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
-        <button type="button" className="btn toggle-btn" aria-pressed="false">
-          <span className="visually-hidden">Show </span>
-          <span>Active</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
-        <button type="button" className="btn toggle-btn" aria-pressed="false">
-          <span className="visually-hidden">Show </span>
-          <span>Completed</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
+     
+        {buttonList}
       </div>
       <h2 id="list-heading">
         3 tasks remaining

@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const BUTTON_DATA = [
+  { id: "b1", name: "All"  },
+  { id: "b2", name: "Active" },
+  { id: "b3", name: "Completed" }
+]
 
 const TODO_DATA = [
   { id: "todo-0", name: "Eat", completed: false },
@@ -13,13 +18,9 @@ const TODO_DATA = [
 console.log(TODO_DATA);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App task={TODO_DATA}/>
-  </React.StrictMode>,
+
+    <App task={TODO_DATA} btn={BUTTON_DATA}/>,
+  
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -3,7 +3,7 @@ import React from "react";
 //exports and defines the function on the same line
 export default function ToDo(props){
 
-    console.log(props)
+    //console.log(props)
 
     return(
         <li className="todo stack-small">
