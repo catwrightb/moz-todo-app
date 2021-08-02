@@ -1,8 +1,12 @@
-import Repeat from "react";
+import React from "react";
+
+
 
 function FilterButton(props) {
+
     return (
-        <button onClick={handle2Submit} type="button" className="btn toggle-btn" aria-pressed="true">
+        <button onClick={() => props.setFilter(props.name)} type="button" className="btn toggle-btn" aria-pressed={props.isPressed}>
+
           <span className="visually-hidden">Show </span>
           <span>{props.name}</span>
           <span className="visually-hidden"> tasks</span>
@@ -11,9 +15,5 @@ function FilterButton(props) {
     
 }
 
-function handle2Submit(e) {
-  e.preventDefault();
-  alert("Hello Mars");
-}
 
 export default FilterButton;
